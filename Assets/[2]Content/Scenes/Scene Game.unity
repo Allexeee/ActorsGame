@@ -194,16 +194,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315877078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5b2aa71ed58b84f91b7cc95e1df48f, type: 3}
+  m_Script: {fileID: 11500000, guid: acf90d1943c0cbf4a8bbc196b43137fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  factories: []
+  factories:
+  - {fileID: 11400000, guid: 2bda2c7283e1c294aac5d12b71fdb39b, type: 2}
   ScenesToKeep:
   - m_SceneAsset: {fileID: 102900000, guid: 2642f792712675d40a8d87889fdfee7a, type: 3}
     m_SceneName: Scene Kernel
   SceneDependsOn:
   - m_SceneAsset: {fileID: 102900000, guid: 2642f792712675d40a8d87889fdfee7a, type: 3}
     m_SceneName: Scene Kernel
+  - m_SceneAsset: {fileID: 102900000, guid: fce5528dda5bddf46852f2e4033c2744, type: 3}
+    m_SceneName: Scene Camera
 --- !u!4 &1315877080
 Transform:
   m_ObjectHideFlags: 0
