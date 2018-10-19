@@ -62,7 +62,7 @@ namespace MyProject.Map
         }
     }
 
-// Структура позиции клетки в XZ плоскости
+    // Структура позиции клетки в XZ плоскости
     public struct Position
     {
         public readonly int X;
