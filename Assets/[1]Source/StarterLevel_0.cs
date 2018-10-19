@@ -10,6 +10,7 @@ namespace MyProject
         {
             // Добавляем нужные процессинги
             Toolbox.Add<ProcessingCells>();
+            Toolbox.Add<ProcessingHouses>();
         }
     }
 }
