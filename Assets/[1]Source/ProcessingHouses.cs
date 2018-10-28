@@ -3,13 +3,17 @@ using Homebrew;
 
 namespace MyProject.Map
 {
+    // Обработчик клеток-зданий
     public class ProcessingHouses : ProcessingBase
     {
         private Group<ComponentCell, ComponentHouse> groupHouses;
 
         public ProcessingHouses()
         {
-            groupHouses.OnAdded += i => { groupHouses.component[i].MeshRenderer.material.color = groupHouses.component2[i].ColorHouse; };
+            groupHouses.Added += entity =>
+            {
+                entity.ComponentCell().MeshRenderer.material.color = entity.ComponentHouse().ColorHouse;
+            };
         }
     }
 }
