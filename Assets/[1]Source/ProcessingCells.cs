@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MyProject.Map
 {
-    // Обработчик игровой карты
+    // Обработчик клеток
     public class ProcessingCells : ProcessingBase
     {
         private Group<ComponentCell> groupCells; // Группа клеток
@@ -15,15 +15,16 @@ namespace MyProject.Map
         public ProcessingCells()
         {
             // Подписываемся на событие по добавлению новых участников группы
-            groupCells.OnAdded += OnAddCell;
+            groupCells.Added += GroupCellsOnAdd;
 
             // Генерация карты
             Toolbox.Get<FactoryMap>().Spawn(width, height);
         }
 
-        private void OnAddCell(int i)
+        private void GroupCellsOnAdd(int entity)
         {
-            var cCells = groupCells.component[i];
+            // Получаем нужный компонент
+            var cCells = entity.ComponentCell();
 
             // Устанавливаем цвет по дефолту
             cCells.MeshRenderer.material.color = cCells.ColorDefault;

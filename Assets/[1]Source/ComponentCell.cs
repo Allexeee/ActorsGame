@@ -13,13 +13,29 @@ namespace MyProject.Map
         // Инициализация переменных
         public void Setup(Actor actor)
         {
-            MeshRenderer = actor.Get<MeshRenderer>("view");
+            // Получает ссылку на нужный компонент из дочернего объекта view
+            MeshRenderer = actor.entity.Get<MeshRenderer>("view");
         }
 
         // Очистка переменных ссылочного типа
         public void Dispose()
         {
             MeshRenderer = null;
+        }
+    }
+
+    // Методы, необходимые для получения компонента
+    public static partial class Game
+    {
+        public static ComponentCell ComponentCell(this int entity)
+        {
+            return Storage<ComponentCell>.Instance.components[entity];
+        }
+
+        public static bool TryGetComponentCell(this int entity, out ComponentCell component)
+        {
+            component = Storage<ComponentCell>.Instance.TryGet(entity);
+            return component != null;
         }
     }
 }
