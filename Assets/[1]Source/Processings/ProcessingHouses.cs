@@ -12,7 +12,10 @@ namespace MyProject.Map
         {
             groupHouses.Added += entity =>
             {
-                entity.ComponentCell().MeshRenderer.material.color = entity.ComponentHouse().ColorHouse;
+                var cCell = entity.ComponentCell();
+                var cHouse = entity.ComponentHouse();
+
+                cCell.MeshRenderer.material.color = cHouse.ColorHouse;
             };
         }
     }

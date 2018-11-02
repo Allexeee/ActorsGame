@@ -5,6 +5,7 @@ namespace MyProject.Map
 {
     // Компонент здания
     [System.Serializable]
+    [RequireTags(Tag.ComponentHouse)]
     public class ComponentHouse : IComponent
     {
         public Color ColorHouse = Color.blue;   // Цвет здания

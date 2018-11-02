@@ -4,11 +4,12 @@ using Homebrew;
 namespace MyProject.Map
 {
     [System.Serializable]
+    [RequireTags(Tag.ComponentCell)]
     public class ComponentCell : IComponent, ISetup, System.IDisposable
     {
         public Color ColorDefault = Color.gray;     // Цвет клетки по дефолту
 
-        public MeshRenderer MeshRenderer { get; private set; }  // Кеш компонента
+        public MeshRenderer MeshRenderer;  // Кеш компонента
 
         // Инициализация переменных
         public void Setup(Actor actor)
